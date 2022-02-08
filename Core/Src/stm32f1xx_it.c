@@ -22,8 +22,6 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "defines.h"
-#include "as5048.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,14 +41,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-volatile uint32_t angle_loop = 1000, drv_loop = 1000, count_max = 1000, pc_loop = 1000;
-float angle = 0.0;
-extern float speed;
-extern UART_HandleTypeDef huart1;
-//extern float str_f;
-uint8_t str_f[BUF_SIZE_FLOAT_UART+2];		
-extern uint8_t f_send_to_drv;
-extern volatile uint8_t lets_time_to_read_angle, lets_time_to_send_angle;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,9 +55,10 @@ extern volatile uint8_t lets_time_to_read_angle, lets_time_to_send_angle;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim2;
+extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
-extern TIM_HandleTypeDef htim3;
+
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -208,44 +200,34 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM1 update interrupt.
+  * @brief This function handles TIM2 global interrupt.
   */
-void TIM1_UP_IRQHandler(void)
+void TIM2_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM1_UP_IRQn 0 */
+  /* USER CODE BEGIN TIM2_IRQn 0 */
 
-  /* USER CODE END TIM1_UP_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim1);
-  /* USER CODE BEGIN TIM1_UP_IRQn 1 */
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
 
-  /* USER CODE END TIM1_UP_IRQn 1 */
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART1 global interrupt.
+  */
+void USART1_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
+
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+
+  /* USER CODE END USART1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
-uint32_t count = 0;
 
-void TIM3_IRQHandler(void)
-{
-	__HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_UPDATE);
-	//HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-	if((count%angle_loop) == 0)
-	{
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_14);
-		// Angle computing loop
-		lets_time_to_read_angle = 1;
-	}
-	if((count%drv_loop) == 0)
-	{
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_15);
-		f_send_to_drv = 1;
-	}
-	if((count%pc_loop) == 0)
-	{
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-		lets_time_to_send_angle = 1;
-	}
-	if(count >= count_max) count = 0;
-	count++;
-}
 /* USER CODE END 1 */
 

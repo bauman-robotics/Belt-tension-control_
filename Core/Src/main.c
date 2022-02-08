@@ -18,15 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "spi.h"
-#include "tim.h"
-#include "usart.h"
-#include "gpio.h"
-#include "as5048.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "defines.h"
+#include "FrequencyCounter.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,60 +31,46 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ANGLE_LOOP	1
-#define DRV_LOOP	2
-#define PC_LOOP	3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+FrequencyCounter first_counter;
 
+int frequency;
+int a;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+TIM_HandleTypeDef htim2;
+
+UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-extern volatile uint32_t angle_loop, drv_loop, pc_loop, count_max;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-void SetLoopsFrequency(uint8_t loop, uint32_t value);
-void SetUpdateFreq(uint32_t freq);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float speed_drv1 =0.1f;
-float speed = 0.0f;
-volatile uint8_t f_send_to_drv = 0;  // flag - to send 
-#define BUF_SIZE_DRV			6
-#define BUF_SIZE_DRV_SEND	7
-uint8_t buf_drv_send[BUF_SIZE_DRV_SEND];					// uint8_t code + float speed
-uint8_t buf_drv_send_decoded[BUF_SIZE_DRV_SEND - 2];
-volatile uint8_t lets_time_to_read_angle = 0, lets_time_to_send_angle = 0;
-uint16_t angle_raw_int = 0;
-uint16_t angle_raw_int_filtred = 0;
-float angle_raw_float = 0;
-float angle_raw_float_filtred = 0;
-uint8_t str_1f[BUF_SIZE_FLOAT_UART+2];
-//uint8_t str_2f[2*BUF_SIZE_FLOAT_UART+2+1];	 // format: $float;   ore $float1 float2;
-uint8_t str_2f[50];	 // format: $float;   ore $float1 float2;
-uint32_t update_freq = 0;
+
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
-//float temp_f  = 0;
-//uint16_t len = 0;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -105,76 +86,31 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-	SystemCoreClockUpdate();
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM1_Init();
-  MX_SPI1_Init();
-  MX_TIM3_Init();
+  MX_TIM2_Init();
   MX_USART1_UART_Init();
-  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	__HAL_TIM_CLEAR_FLAG(&htim1, TIM_SR_UIF); // clear interrupt bits
-	__HAL_TIM_CLEAR_FLAG(&htim3, TIM_SR_UIF);
-	HAL_TIM_Base_Start_IT(&htim1);
-	__HAL_TIM_ENABLE_IT(&htim3, TIM_IT_UPDATE);
-	USART1->CR1 |= USART_CR1_RXNEIE;
-	USART2->CR1 |= USART_CR1_RXNEIE;
-	//SysTick_Config(SystemCoreClock/2000); // 2000 times per second
-	//Set update frequency in Hz (Note!! Timer clock = 1 MHz)
-	SetUpdateFreq(500);	
-	//Set angle loop frequency in Hz
-	SetLoopsFrequency(ANGLE_LOOP, 100); // 100 Hz => 10 ms
-	//Set driver loop frequency in Hz
-	SetLoopsFrequency(DRV_LOOP, 50);    // 50 Hz => 20 ms
-	//Set PC loop frequency in Hz
-	SetLoopsFrequency(PC_LOOP, 20);     // 20 Hz => 50 ms
-	//Update timer start
-	__HAL_TIM_CLEAR_FLAG(&htim1, TIM_SR_UIF); // clear int flag
-	HAL_TIM_Base_Start_IT(&htim1);
-
-	HAL_TIM_Base_Start_IT(&htim3);
 	
+	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
+	uint8_t str[]= "hello";
+	while (1)
   {
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+		HAL_Delay(2);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+		HAL_Delay(500);
+		HAL_UART_Transmit(&huart1, str, 5, 0x0fff);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		if (f_send_to_drv) {
-			f_send_to_drv = 0;
-			buf_drv_send_decoded[0] = 'v';
-			memcpy(buf_drv_send_decoded + 1, &speed, sizeof(float));
-			cobs_encode(buf_drv_send_decoded, BUF_SIZE_DRV_SEND - 2, buf_drv_send); // inp, lenght = 5 ?, outp
-			HAL_UART_Transmit(&huart2, buf_drv_send, BUF_SIZE_DRV_SEND, 0x0FFF);
-		}
-		if (lets_time_to_read_angle) {
-			lets_time_to_read_angle = 0;
-			//temp_f = get_angle();	
-			angle_raw_int = get_angle_raw();	
-			angle_raw_float = (float)(angle_raw_int)*0.021973997;			
-			angle_raw_int_filtred = Filter_SMA(angle_raw_int);	
-			angle_raw_float_filtred = (float)(angle_raw_int_filtred)*0.021973997;
-			// Speed calcualtion
-			if (angle_raw_float_filtred > 185) speed = 0; 
-			else {
-				speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
-			}
-			if (speed <0.0f) speed = 0.0f;
-			if (speed > 1.0f) speed = 1.0f;
-		}		
-		if (lets_time_to_send_angle)
-		{
-			lets_time_to_send_angle = 0;
-			//len = strlen(str_2f);
-			sprintf(str_2f, "$%f %f;" , angle_raw_float, angle_raw_float_filtred);
-			HAL_UART_Transmit(&huart1, str_2f, strlen(str_2f), 0x0FFF);	
-		}
   }
   /* USER CODE END 3 */
 }
@@ -217,40 +153,122 @@ void SystemClock_Config(void)
   }
 }
 
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_IC_InitTypeDef sConfigIC = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 71;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 65500;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_IC_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 0;
+  if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+}
+
 /* USER CODE BEGIN 4 */
-void SetUpdateFreq(uint32_t freq)
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-	if(freq > 1000000) freq = 1000000;
-	TIM3->ARR = SystemCoreClock/(TIM3->PSC+1)/freq;
-	update_freq = count_max = freq;
+	a = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
+	frequency = 1000000/a;
+	__HAL_TIM_SetCounter(htim, 0);
 }
 
 
-void SetLoopsFrequency(uint8_t loop, uint32_t value)
-{
-	if(value != 0)
-	{
-		switch(loop)
-		{
-			case ANGLE_LOOP:		
-			{
-				angle_loop = update_freq/value;
-				break;
-			}
-			case DRV_LOOP:		
-			{
-				drv_loop = update_freq/value;
-				break;
-			}
-			case PC_LOOP:		
-			{
-				pc_loop = update_freq/value;
-				break;
-			}
-		}
-	}
-	
-}
 /* USER CODE END 4 */
 
 /**
