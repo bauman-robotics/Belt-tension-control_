@@ -26,7 +26,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-// hello
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -35,7 +35,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-FrequencyCounter first_counter;
+Frequency_Counter first_counter;
 
 int frequency;
 int a;
@@ -94,7 +94,7 @@ int main(void)
   MX_TIM2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	
+	InitFrequencyCounter(&first_counter, &htim2, TIM_CHANNEL_1, 72, 0);
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
@@ -103,13 +103,10 @@ int main(void)
 	uint8_t str[]= "hello";
 	while (1)
   {
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-		HAL_Delay(2);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-		HAL_Delay(500);
-		HAL_UART_Transmit(&huart1, str, 5, 0x0fff); //UART
     /* USER CODE END WHILE */
-
+		HAL_Delay(10);
+		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+		a = htim2.Instance->CNT;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -263,12 +260,15 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-	a = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-	frequency = 1000000/a;
-	__HAL_TIM_SetCounter(htim, 0);
+	CountFrequency(&first_counter);
+	frequency = first_counter.result_frequency;
 }
 
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	IncreaseMeasuringLimit(&first_counter);
+}
 /* USER CODE END 4 */
 
 /**

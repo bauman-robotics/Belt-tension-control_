@@ -1,9 +1,9 @@
 --cpu Cortex-M3
 "test\startup_stm32f103x6.o"
-"test\frequencycounter.o"
 "test\main.o"
 "test\stm32f1xx_it.o"
 "test\stm32f1xx_hal_msp.o"
+"test\frequencycounter.o"
 "test\stm32f1xx_hal_gpio_ex.o"
 "test\stm32f1xx_hal_tim.o"
 "test\stm32f1xx_hal_tim_ex.o"
