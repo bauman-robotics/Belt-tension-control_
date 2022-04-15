@@ -1,5 +1,5 @@
 test\frequencycounter.o: ..\Core\Src\FrequencyCounter.c
-test\frequencycounter.o: ../Core/Inc/FrequencyCounter.h
+test\frequencycounter.o: ..\Core\Src\FrequencyCounter.h
 test\frequencycounter.o: ../Core/Inc/main.h
 test\frequencycounter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 test\frequencycounter.o: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -30,4 +30,5 @@ test\frequencycounter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 test\frequencycounter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 test\frequencycounter.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 test\frequencycounter.o: ../Core/Inc/FrequencyCounter.h
+test\frequencycounter.o: ../Core/Inc/main.h
 test\frequencycounter.o: C:\Program Files\Keil\Core\ARM\ARMCC\Bin\..\include\stdio.h

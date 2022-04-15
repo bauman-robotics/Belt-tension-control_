@@ -94,20 +94,23 @@ int main(void)
   MX_TIM2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	InitFrequencyCounter(&first_counter, &htim2, TIM_CHANNEL_1, 72, 0);
+	InitFrequencyCounter(&first_counter, &htim2, TIM_CHANNEL_1, 72);
+	//HAL_TIM_Base_Start_IT(&htim2);
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
+	__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_UPDATE);
+	//htim2.Instance->DIER|=1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	uint8_t str[]= "hello";
 	while (1)
   {
     /* USER CODE END WHILE */
-		HAL_Delay(10);
+
+    /* USER CODE BEGIN 3 */
+		HAL_Delay(100);
 		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 		a = htim2.Instance->CNT;
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -171,7 +174,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 71;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 65500;
+  htim2.Init.Period = 65000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_IC_Init(&htim2) != HAL_OK)
@@ -267,7 +270,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	IncreaseMeasuringLimit(&first_counter);
+	first_counter.full_periods++;
 }
 /* USER CODE END 4 */
 
