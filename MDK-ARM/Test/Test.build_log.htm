@@ -22,11 +22,14 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 D:\Sea Jackal\Bauman Robotics\Belt-tension-control_\MDK-ARM\Test.uvprojx
-Project File Date:  04/14/2022
+Project File Date:  04/16/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Program Files\Keil\Core\ARM\ARMCC\Bin'
 Build target 'Test'
+assembling startup_stm32f103x6.s...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_cortex.c...
 compiling main.c...
 ../Core/Inc/FrequencyCounter.h(21): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -34,11 +37,58 @@ compiling main.c...
   void IncrementFirstCounter();
 ../Core/Src/FrequencyCounter.h(14): warning:  #1-D: last line of file ends without a newline
   #endif
-../Core/Src/main.c: 3 warnings, 0 errors
+../Core/Inc/MedianFilter.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/main.c: 4 warnings, 0 errors
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_it.c...
+../Core/Inc/FrequencyCounter.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/main.h(39): warning:  #1295-D: Deprecated declaration IncrementFirstCounter - give arg types
+  void IncrementFirstCounter();
+../Core/Src/stm32f1xx_it.c: 2 warnings, 0 errors
+compiling MedianFilter.c...
+../Core/Inc/FrequencyCounter.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/main.h(39): warning:  #1295-D: Deprecated declaration IncrementFirstCounter - give arg types
+  void IncrementFirstCounter();
+../Core/Inc/MedianFilter.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Core\Src\MedianFilter.c(119): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\Src\MedianFilter.c: 4 warnings, 0 errors
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_msp.c...
+../Core/Inc/FrequencyCounter.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/main.h(39): warning:  #1295-D: Deprecated declaration IncrementFirstCounter - give arg types
+  void IncrementFirstCounter();
+../Core/Src/stm32f1xx_hal_msp.c: 2 warnings, 0 errors
+compiling FrequencyCounter.c...
+../Core/Inc/FrequencyCounter.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Inc/main.h(39): warning:  #1295-D: Deprecated declaration IncrementFirstCounter - give arg types
+  void IncrementFirstCounter();
+..\Core\Src\FrequencyCounter.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Core\Src\FrequencyCounter.c(20): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\Src\FrequencyCounter.c: 4 warnings, 0 errors
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_exti.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling system_stm32f1xx.c...
+compiling stm32f1xx_hal_uart.c...
 linking...
-Program Size: Code=6056 RO-data=292 RW-data=28 ZI-data=1796  
+Program Size: Code=6896 RO-data=292 RW-data=40 ZI-data=1792  
 FromELF: creating hex file...
-"Test\Test.axf" - 0 Error(s), 3 Warning(s).
+"Test\Test.axf" - 0 Error(s), 16 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -62,7 +112,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "FrequencyCounter.h"
+#include "MedianFilter.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,8 +37,10 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 Frequency_Counter first_counter;
+Median_Filter filter;
 
-int frequency;
+int pure_frequency;
+int filtred_frequency;
 int a;
 /* USER CODE END PM */
 
@@ -95,6 +98,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	InitFrequencyCounter(&first_counter, &htim2, TIM_CHANNEL_1, 72);
+	InitFilter(&filter, 5);
 	//HAL_TIM_Base_Start_IT(&htim2);
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
 	__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_UPDATE);
@@ -175,7 +179,7 @@ static void MX_TIM2_Init(void)
   htim2.Init.Prescaler = 71;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 65000;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV2;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_IC_Init(&htim2) != HAL_OK)
   {
@@ -190,7 +194,7 @@ static void MX_TIM2_Init(void)
   sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
-  sConfigIC.ICFilter = 0;
+  sConfigIC.ICFilter = 15;
   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
@@ -264,7 +268,9 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
 	CountFrequency(&first_counter);
-	frequency = first_counter.result_frequency;
+	pure_frequency = first_counter.result_frequency;
+	AddValue(&filter, pure_frequency);
+	filtred_frequency = ReturnMedian(&filter);
 }
 
 

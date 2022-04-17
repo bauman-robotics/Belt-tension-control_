@@ -1,6 +1,5 @@
 #include "FrequencyCounter.h"
 #include "main.h"
-#include <stdio.h>
 
 uint32_t tick_count;
 
