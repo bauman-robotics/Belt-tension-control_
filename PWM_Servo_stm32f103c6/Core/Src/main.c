@@ -94,8 +94,11 @@ int main(void)
 	a = servo_init(&servo1, &htim2, TIM_CHANNEL_1);
 	b = servo_init(&servo2, &htim2, TIM_CHANNEL_2);
 
-	servo_set_limit(&servo1, 0, 90);
-	servo_set_limit(&servo2, 0, 90);
+	servo_set_limit(&servo1, 5, 90);
+	servo_set_limit(&servo2, 15, 90);
+
+	servo_set_position(&servo1, 5); // open
+	servo_set_position(&servo2, 15); // open
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,20 +108,21 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)) servo_set_position(&servo1, 0); // open ventil 1
-			else servo_set_position(&servo1, 90);  // close ventil 1
-		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_15)) servo_set_position(&servo2, 0); // open ventil 2
-			else servo_set_position(&servo2, 90);  // close ventil 2
+		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)) servo_set_position(&servo1, 90); // close ventil 1
+			else servo_set_position(&servo1, 5);  // open ventil 1
+		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_15)) servo_set_position(&servo2, 90); // close ventil 2
+			else servo_set_position(&servo2, 15);  // open ventil 2
 		if ((HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_14)) || (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_15))) HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
 			else HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
 		/*
-		servo_set_position(&servo1, 0);
-		servo_set_position(&servo2, 0);
-		HAL_Delay(3000);
 		servo_set_position(&servo1, 90);
 		servo_set_position(&servo2, 90);
 		HAL_Delay(3000);
+		servo_set_position(&servo1, 0);
+		servo_set_position(&servo2, 15);
+		HAL_Delay(3000);
 		*/
+		//*/
   }
   /* USER CODE END 3 */
 }
