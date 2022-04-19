@@ -45,7 +45,7 @@ servo_status_t servo_init(servo_t *handler, TIM_HandleTypeDef *htim, uint32_t ch
     handler->max = 170;
 
     if(HAL_TIM_PWM_Start(htim, channel) != HAL_OK) return SERVO_STATUS_ERROR;
-    servo_set_position(handler, 0);
+    servo_set_position(handler, 90); // close
 
     return SERVO_STATUS_OK;
 }
