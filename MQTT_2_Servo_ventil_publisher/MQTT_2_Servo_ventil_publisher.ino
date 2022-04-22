@@ -159,7 +159,7 @@ void loop() {
     pin_2_old = pin_2_now;
   }
   else change_state_pin_2 = 0;
-  if (change_state_pin_1  change_state_pin_2) {
+  if (change_state_pin_1 || change_state_pin_2) {
     led_state ^=1;
     digitalWrite(led_pin,led_state); 
     if      ((pin_1_now == 1) && (pin_2_now ==1)) val_to_send = 0; // P0 = On, P1 = On;
@@ -171,7 +171,7 @@ void loop() {
     val_to_send_str = String(val_to_send);
     //Serial.println(val_to_send_str);
     val_to_send_char = val_to_send_str.c_str();
-    mqttClient.publish(esp32leds, 0, true, val_to_send_char);
+    mqttClient.publish("esp32/leds", 0, true, val_to_send_char);
   }
   
 }
