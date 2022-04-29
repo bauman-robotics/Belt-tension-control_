@@ -9,15 +9,16 @@
 #define MQTT_PORT 1883
 
 //pins
-const char ventil_2_pin = 2;    // input
+const char ventil_2_pin = 2;    // input // inline led pin
 const char zero_sensor_pin = 3; //rx // input
 //const char led_pin = 1; // tx   // out -was // at now input kinfe
 const char knife_pin = 1; // tx   // out -was // at now input kinfe
+const char led_pin = 0; //extern led // prg_pin
 //----
 uint8_t pin_2_old = 1; // after reset
 uint8_t pin_2_now = 1; 
 uint8_t change_state_pin_2 = 0; 
-//char led_state = 1; // off
+char led_state = 1; // off
 uint8_t      val_to_send = 0;
 String       val_to_send_str = "";
 const char * val_to_send_char;
@@ -73,8 +74,8 @@ void onMqttConnect(bool sessionPresent) {
   //uint16_t packetIdPub2 = mqttClient.publish("test/lol", 2, true, "test 3");
   //Serial.print("Publishing at QoS 2, packetId: ");
   //Serial.println(packetIdPub2);
-  //led_state = 0;
-  //digitalWrite(led_pin,led_state); // Led on
+  led_state = 0;                   // Led on
+  digitalWrite(led_pin,led_state); // Led on
   
   //val_to_send_char = 0; // On, On
   //val_to_send = 0; // On, On
@@ -143,10 +144,12 @@ void setup() {
   pinMode(zero_sensor_pin, INPUT);
   pinMode(ventil_2_pin, INPUT);
   pinMode(knife_pin, INPUT);
-  //pinMode(led_pin, OUTPUT);
+  pinMode(led_pin, OUTPUT);
   //Serial.begin(115200);
   //Serial.println();
   //Serial.println();
+  //led_state = 1; //off
+  //digitalWrite(led_pin,led_state); // Led off
 
   wifiConnectHandler = WiFi.onStationModeGotIP(onWifiConnect);
   wifiDisconnectHandler = WiFi.onStationModeDisconnected(onWifiDisconnect);
@@ -159,10 +162,8 @@ void setup() {
   mqttClient.onPublish(onMqttPublish);
   mqttClient.setServer(MQTT_HOST, MQTT_PORT);
 
-  connectToWifi();
-  
+  connectToWifi();  
   pin_2_old = digitalRead(ventil_2_pin);
-  //digitalWrite(led_pin,led_state); // Led off
 }
 
 void loop() {
@@ -176,8 +177,8 @@ void loop() {
   }
   else change_state_pin_2 = 0;
    if (change_state_pin_2) {
-    //led_state ^=1;
-    // digitalWrite(led_pin,led_state); 
+    led_state ^=1;
+    digitalWrite(led_pin,led_state); 
      if      ((pin_2_now ==0) && (digitalRead(zero_sensor_pin) == 0)) val_to_send = 2; // P0 = On, P1 = Off;
      else if ((pin_2_now ==0) && (digitalRead(zero_sensor_pin) == 1)) val_to_send = 1; // P0 = Off, P1 = On;
      else if (pin_2_now ==1) val_to_send = 0; // P0 = On, P1 = On;
@@ -190,6 +191,8 @@ void loop() {
    knife_pin_state_now  = digitalRead(knife_pin); 
    if (knife_pin_state_old != knife_pin_state_now) {
       knife_pin_state_old = knife_pin_state_now;
+      led_state ^=1;
+      digitalWrite(led_pin,led_state); 
     if (knife_pin_state_now) {
       mqttClient.publish("esp32/knife", 0, true, knife_up);
     } else 
