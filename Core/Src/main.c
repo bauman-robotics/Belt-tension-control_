@@ -62,6 +62,7 @@ void SetUpdateFreq(uint32_t freq);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 float speed_drv1 =0.1f;
 float speed = 0.0f;
 volatile uint8_t f_send_to_drv = 0;  // flag - to send 
@@ -161,6 +162,7 @@ int main(void)
 			angle_raw_int_filtred = Filter_SMA(angle_raw_int);	
 			angle_raw_float_filtred = (float)(angle_raw_int_filtred)*0.021973997;
 			// Speed calcualtion
+			angle_raw_float_filtred = angle_raw_float_filtred - 152.6; // New position 05.13
 			if (angle_raw_float_filtred > 185) speed = 0; 
 			else {
 				speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
