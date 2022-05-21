@@ -1,0 +1,262 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\bitmap1.bmp"
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\CPP Demo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\CPP Demo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 217, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About CPP Demo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "CPP Demo Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1905",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_CPPDEMO_DIALOG DIALOGEX 0, 0, 865, 588
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CCDUSBDCOM01.DLL CPP Demo"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "End",IDOK,64,492,48,27
+    PUSHBUTTON      "StartWaitMeasure",IDC_StartWaitMeasureBUTTON,136,14,64,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Camera Reset",IDC_CameraResetBUTTON,136,31,49,14,NOT WS_VISIBLE
+    PUSHBUTTON      "GetSerialNumber",IDC_GetSerialNumberBUTTON,191,31,65,14,NOT WS_VISIBLE
+    CTEXT           "Serial Number",IDC_SERIAL,145,100,107,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,131,8,521,357
+    PUSHBUTTON      "Show + save",IDC_BUTTON1,204,14,53,14,NOT WS_VISIBLE
+    CONTROL         "row",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,18,41,12,8
+    PUSHBUTTON      "Read Bmp",IDC_READ_BMP,149,52,41,20,NOT WS_VISIBLE
+    LISTBOX         IDC_LIST1,7,115,60,48,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST2,7,329,62,28,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST3,7,171,60,48,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST4,7,226,61,46,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT2,14,52,22,18,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ok",IDC_BUT_N_Str,63,52,18,19
+    LTEXT           "col",IDC_STATIC,45,41,10,8
+    EDITTEXT        IDC_EDIT3,39,52,21,18,ES_AUTOHSCROLL
+    LISTBOX         IDC_LIST6,7,280,62,44,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Store BMP",IDC_BUTTON4,201,49,55,21,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,130,369,523,161
+    LISTBOX         IDC_LIST5,7,114,113,246,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,656,7,175,360
+    PUSHBUTTON      "Store + Show",IDC_Store,208,73,47,21,NOT WS_VISIBLE
+    PUSHBUTTON      "Stop Series",IDC_BUTTON6,62,463,50,18
+    PUSHBUTTON      "Def Edges",IDC_BUTTON7,75,425,45,18,NOT WS_VISIBLE
+    PUSHBUTTON      "Ser Def Edge",IDC_BUTTON8,7,463,49,18
+    PUSHBUTTON      "Store up pic",IDC_BUTTON11,7,495,50,17
+    CONTROL         "sign1",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,379,33,10
+    CONTROL         "sign3",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,380,33,10
+    CONTROL         "sign4",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,395,33,10
+    CONTROL         "diagram",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,395,41,10
+    LTEXT           "level",IDC_STATIC,14,75,32,11
+    PUSHBUTTON      "Ok",IDC_BUTTON9,44,86,20,18
+    EDITTEXT        IDC_EDIT1,14,86,23,17,ES_AUTOHSCROLL
+    CONTROL         "sign2",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,380,33,10
+    CONTROL         "sign5",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,85,396,33,10
+    PUSHBUTTON      "Read Bmp ",IDC_BUTTON10,70,88,57,14
+    EDITTEXT        IDC_EDIT4,13,21,21,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ok",IDC_BUTTON5,41,21,23,16
+    LTEXT           "Exp Time",IDC_STATIC,20,10,30,8
+    CONTROL         "use centre of gravitation",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,412,89,10
+    LTEXT           "Dia",IDC_Dia,663,374,118,21
+    CONTROL         "approx",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,430,37,10
+    CONTROL         "fast mode",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,364,47,10
+    LTEXT           "Static",IDC_s_temp,77,38,19,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,658,402,174,128
+    PUSHBUTTON      "Get One Pic",IDC_BUTTON_Get_One_Pic,17,540,50,14
+    PUSHBUTTON      "Get One Pic and store",IDC_BUTTON_Get_One_Pic_and_store,77,539,92,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "CPP Demo MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "CPP Demo"
+            VALUE "LegalCopyright", "Copyright (C) 1905"
+            VALUE "OriginalFilename", "CPP Demo.EXE"
+            VALUE "ProductName", "CPP Demo Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CPPDEMO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 858
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 580
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About CPP Demo..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\CPP Demo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
