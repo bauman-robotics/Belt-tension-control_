@@ -22,7 +22,6 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "as5048.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -85,8 +84,6 @@ uint32_t update_freq = 0;
   * @brief  The application entry point.
   * @retval int
   */
-//float temp_f  = 0;
-//uint16_t len = 0;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -116,6 +113,7 @@ int main(void)
   MX_TIM3_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	__HAL_TIM_CLEAR_FLAG(&htim1, TIM_SR_UIF); // clear interrupt bits
 	__HAL_TIM_CLEAR_FLAG(&htim3, TIM_SR_UIF);
