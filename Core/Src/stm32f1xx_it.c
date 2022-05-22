@@ -43,6 +43,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+extern uint32_t period; 
 extern uint32_t sys_count_pred;
 extern uint32_t sys_count;
 extern uint32_t pwm;
@@ -208,7 +209,7 @@ void SysTick_Handler(void)
 		}
 	}
 	else {
-			pwm_valid = pwm;	
+			pwm_valid = (uint32_t)((period - pwm)/31.42);	
 	}
 	sys_count_pred = sys_count;	
   /* USER CODE END SysTick_IRQn 0 */
@@ -271,11 +272,18 @@ void TIM3_IRQHandler(void)
 		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_15);
 		f_send_to_drv = 1;
 	}
-	if((count%pc_loop) == 0)
+	
+	if((count%((pwm_valid +1))) == 0)  // Led_blink
 	{
 		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	}
+	if((count%pc_loop) == 0)
+	{
+		//HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
 		lets_time_to_send_angle = 1;
 	}
+
+	
 	if(count >= count_max) count = 0;
 	count++;
 }

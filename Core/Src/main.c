@@ -35,6 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define SPEED_CORRECTION_BY_PWM_IN
 #define ANGLE_LOOP	1
 #define DRV_LOOP	2
 #define PC_LOOP	3
@@ -172,7 +173,11 @@ int main(void)
 			angle_raw_float_filtred = angle_raw_float_filtred - 152.6; // New position 05.13
 			if (angle_raw_float_filtred > 185) speed = 0; 
 			else {
-				speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
+				#if defined (SPEED_CORRECTION_BY_PWM_IN)
+					speed = (1.1125 - 0.00612 * angle_raw_float_filtred)*((float)pwm_valid/100 + 1);
+				#else
+					speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
+				#endif
 			}
 			if (speed <0.0f) speed = 0.0f;
 			if (speed > 1.0f) speed = 1.0f;
@@ -271,14 +276,14 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
         
             period = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_1);
             pulseWidth = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_2);
-						if (( period < 5000) && (period > 8000)) {
+						if (( period < 7200) && (period > 8800)) {
 							pwm = 0;							
 						}
 						else {
-							if ((pulseWidth > 50) && (pulseWidth < period - 50)) pwm = pulseWidth;
+							if ((pulseWidth > 5) && (pulseWidth < period - 5)) pwm = pulseWidth;
 							else {
-								if (pulseWidth <= 50) pwm = 0; 
-								if ((pulseWidth >= period - 50) && (pulseWidth <  period)) pwm = 0;
+								if (pulseWidth <= 5) pwm = 0; 
+								if ((pulseWidth >= period - 5) && (pulseWidth <  period)) pwm = 0;
 								if (pulseWidth >= period) pwm = 0; 
 								}
 							}
