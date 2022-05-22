@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Timer_capture_mode' 
- * Target:  'Timer_capture_mode' 
+ * Project: 'PWM_Analize_stm32f103c6' 
+ * Target:  'PWM_Analize_stm32f103c6' 
  */
 
 #ifndef RTE_COMPONENTS_H

@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -57,13 +56,14 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim2;
-extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim3;
 /* USER CODE BEGIN EV */
 extern uint32_t sys_count_pred;
 extern uint32_t sys_count;
-extern uint64_t pwm_akk;
-extern uint32_t pwm_akk_count;
-extern uint32_t pwm_filtred;
+//extern uint64_t pwm_akk;
+//extern uint32_t pwm_akk_count;
+//extern uint32_t pwm_filtred;
+extern uint32_t pwm;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -78,7 +78,9 @@ void NMI_Handler(void)
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-
+  while (1)
+  {
+  }
   /* USER CODE END NonMaskableInt_IRQn 1 */
 }
 
@@ -187,14 +189,19 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-	pwm_filtred = (int)pwm_akk/pwm_akk_count;
-	pwm_akk = pwm_filtred;
-	pwm_akk_count = 0;
 	if (sys_count == sys_count_pred) {   // if pwm stop 
-		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) TIM4->CCR2=1200;   // speed = 0
- 		else TIM4->CCR2=2400;                                       // speed = max
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+			TIM3->CCR2=0;   // speed = 0
+			pwm = 0;
+		}
+ 		else {
+			TIM3->CCR2=0;                                       // speed = max
+			pwm = 0;
+		}
 	}
-	else TIM4->CCR2= pwm_filtred;	
+	else {
+			TIM3->CCR2= pwm;	
+	}
 	sys_count_pred = sys_count;		
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
@@ -225,20 +232,20 @@ void TIM2_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM4 global interrupt.
+  * @brief This function handles TIM3 global interrupt.
   */
-void TIM4_IRQHandler(void)
+void TIM3_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM4_IRQn 0 */
+  /* USER CODE BEGIN TIM3_IRQn 0 */
 
-  /* USER CODE END TIM4_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim4);
-  /* USER CODE BEGIN TIM4_IRQn 1 */
+  /* USER CODE END TIM3_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim3);
+  /* USER CODE BEGIN TIM3_IRQn 1 */
 
-  /* USER CODE END TIM4_IRQn 1 */
+  /* USER CODE END TIM3_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
