@@ -43,6 +43,10 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+extern uint32_t sys_count_pred;
+extern uint32_t sys_count;
+extern uint32_t pwm;
+extern uint32_t pwm_valid;
 volatile uint32_t angle_loop = 1000, drv_loop = 1000, count_max = 1000, pc_loop = 1000;
 float angle = 0.0;
 extern float speed;
@@ -193,7 +197,20 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
-
+	if (sys_count == sys_count_pred) {   // if pwm stop 
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+			pwm = 0;
+			pwm_valid = 0;
+		}
+ 		else {
+			pwm = 0;
+			pwm_valid = 0;
+		}
+	}
+	else {
+			pwm_valid = pwm;	
+	}
+	sys_count_pred = sys_count;	
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */

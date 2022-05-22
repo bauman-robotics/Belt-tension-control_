@@ -49,7 +49,6 @@
 
 /* USER CODE BEGIN PV */
 extern volatile uint32_t angle_loop, drv_loop, pc_loop, count_max;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,6 +60,13 @@ void SetUpdateFreq(uint32_t freq);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint32_t period; 
+uint32_t pulseWidth;
+uint32_t i,d;
+uint32_t pwm;
+uint32_t pwm_valid;
+uint32_t sys_count;
+uint32_t sys_count_pred;
 
 float speed_drv1 =0.1f;
 float speed = 0.0f;
@@ -115,6 +121,9 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_2);
+	
 	__HAL_TIM_CLEAR_FLAG(&htim1, TIM_SR_UIF); // clear interrupt bits
 	__HAL_TIM_CLEAR_FLAG(&htim3, TIM_SR_UIF);
 	HAL_TIM_Base_Start_IT(&htim1);
@@ -251,6 +260,33 @@ void SetLoopsFrequency(uint8_t loop, uint32_t value)
 	}
 	
 }
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM2)
+    {
+        if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+        {
+            TIM2->CNT = 0;
+        
+            period = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_1);
+            pulseWidth = HAL_TIM_ReadCapturedValue(&htim2, TIM_CHANNEL_2);
+						if (( period < 5000) && (period > 8000)) {
+							pwm = 0;							
+						}
+						else {
+							if ((pulseWidth > 50) && (pulseWidth < period - 50)) pwm = pulseWidth;
+							else {
+								if (pulseWidth <= 50) pwm = 0; 
+								if ((pulseWidth >= period - 50) && (pulseWidth <  period)) pwm = 0;
+								if (pulseWidth >= period) pwm = 0; 
+								}
+							}
+        }
+    }
+		sys_count ++;
+}
+
 /* USER CODE END 4 */
 
 /**
