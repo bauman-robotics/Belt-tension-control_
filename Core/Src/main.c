@@ -170,11 +170,14 @@ int main(void)
 			angle_raw_int_filtred = Filter_SMA(angle_raw_int);	
 			angle_raw_float_filtred = (float)(angle_raw_int_filtred)*0.021973997;
 			// Speed calcualtion
-			angle_raw_float_filtred = angle_raw_float_filtred - 152.6; // New position 05.13
-			if (angle_raw_float_filtred > 185) speed = 0; 
+			//angle_raw_float_filtred = angle_raw_float_filtred - 152.6; // New position 05.13
+			angle_raw_float_filtred = angle_raw_float_filtred - 54.6; // New position 05.30
+			//if (angle_raw_float_filtred > 185) speed = 0;  //  05.13
+			if (angle_raw_float_filtred > 167.5) speed = 0;  //  05.30
 			else {
 				#if defined (SPEED_CORRECTION_BY_PWM_IN)
-					speed = (1.1125 - 0.00612 * angle_raw_float_filtred)*((float)pwm_valid/100 + 1);
+					//speed = (1.1125 - 0.00612 * angle_raw_float_filtred)*((float)pwm_valid/100 + 1);  //  05.13
+					speed = (1.0337 - 0.00612 * angle_raw_float_filtred)*((float)pwm_valid/100 + 1);    //  05.30
 				#else
 					speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
 				#endif

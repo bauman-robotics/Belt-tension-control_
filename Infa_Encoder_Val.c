@@ -21,3 +21,15 @@ speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
 			if (angle_raw_float_filtred > 185) speed = 0; 
 			else {
 				speed = 1.1125 - 0.00612 * angle_raw_float_filtred;
+				
+--- 05_30			
+--- Новое положение вала. Усиленная конструкция, вал 8 мм.
+
+Горизонтальное положение 207,3 град
+Нижнее положение 168,9 град
+Начало срабатывания 167,5 град
+
+Разница 54,6 град 
+angle_raw_float_filtred = angle_raw_float_filtred - 54.6; // New position 05.13
+
+speed = 1.0337 - 0.00612 * angle_raw_float_filtred;
