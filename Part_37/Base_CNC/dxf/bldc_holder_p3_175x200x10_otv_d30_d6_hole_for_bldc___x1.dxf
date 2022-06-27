@@ -219,7 +219,7 @@ TABLE
   2
 LAYER
   5
-AAA
+AB0
 330
 0
 100
@@ -229,9 +229,9 @@ AcDbSymbolTable
   0
 LAYER
   5
-AAB
+AB1
 330
-AAA
+AB0
 100
 AcDbSymbolTableRecord
 100
@@ -247,9 +247,9 @@ CONTINUOUS
   0
 LAYER
   5
-AAC
+AB2
 330
-AAA
+AB0
 100
 AcDbSymbolTableRecord
 100
@@ -265,9 +265,9 @@ CONTINUOUS
   0
 LAYER
   5
-AAD
+AB3
 330
-AAA
+AB0
 100
 AcDbSymbolTableRecord
 100
@@ -703,19 +703,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
--1.02e-15
+3.54e-15
  20
-15.5
+184.5
  30
 0
  11
--6.32884e-15
+2.48688e-14
  21
-31.1142
+166.425
  31
 0
   0
-LINE
+ARC
   5
 A09
 330
@@ -725,21 +725,23 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
--1.78e-15
+3
  20
-15.5
+184.5
  30
 0
- 11
--1.78e-15
- 21
-15.5
- 31
-10
+ 40
+3
+100
+AcDbArc
+ 50
+90
+ 51
+180
   0
-LINE
+ARC
   5
 A0A
 330
@@ -749,19 +751,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
--6.28e-15
+-12
  20
-31.1142
+100
  30
 0
- 11
--6.28e-15
- 21
-31.1142
- 31
-10
+ 40
+67.5
+100
+AcDbArc
+ 50
+-77.7155
+ 51
+79.7597
   0
 LINE
   5
@@ -775,71 +779,21 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
--1.02e-15
+197
  20
-15.5
+187.5
  30
-10
+0
  11
--6.32884e-15
+3
  21
-31.1142
+187.5
  31
-10
+0
   0
-LINE
+ARC
   5
 A0C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
--1.02e-15
- 20
-15.5
- 30
-0
- 11
--6.32884e-15
- 21
-31.1142
- 31
-0
-  0
-ARC
-  5
-A0D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-3
- 20
-15.5
- 30
-0
- 40
-3
-100
-AcDbArc
- 50
-180
- 51
--90
-  0
-ARC
-  5
-A0E
 330
 A02
 100
@@ -863,6 +817,56 @@ AcDbArc
  51
 180
   0
+ARC
+  5
+A0D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+197
+ 20
+184.5
+ 30
+0
+ 40
+3
+100
+AcDbArc
+ 50
+0
+ 51
+90
+  0
+LINE
+  5
+A0E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-1.02e-15
+ 20
+15.5
+ 30
+0
+ 11
+-6.32884e-15
+ 21
+31.1142
+ 31
+0
+  0
 LINE
   5
 A0F
@@ -875,15 +879,15 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-3
+200
  20
-12.5
+15.5
  30
 0
  11
-197
+200
  21
-12.5
+184.5
  31
 0
   0
@@ -899,19 +903,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
--12
+3
  20
-100
+15.5
  30
 0
  40
-67.5
+3
 100
 AcDbArc
  50
--77.7155
+180
  51
-79.7597
+-90
   0
 ARC
   5
@@ -951,95 +955,21 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-0
- 20
-187.5
- 30
-0
- 11
-2.48688e-14
- 21
-166.425
- 31
-0
-  0
-LINE
-  5
-A13
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-0
- 11
-200
- 21
-184.5
- 31
-0
-  0
-LINE
-  5
-A14
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-0
- 11
-0
- 21
-187.5
- 31
-0
-  0
-ARC
-  5
-A15
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-184.5
- 30
-0
- 40
 3
-100
-AcDbArc
- 50
+ 20
+12.5
+ 30
 0
- 51
-90
+ 11
+197
+ 21
+12.5
+ 31
+0
   0
 CIRCLE
   5
-A16
+A13
 330
 A02
 100
@@ -1057,7 +987,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A17
+A14
 330
 A02
 100
@@ -1075,7 +1005,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A18
+A15
 330
 A02
 100
@@ -1093,7 +1023,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A19
+A16
 330
 A02
 100
@@ -1111,7 +1041,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A1A
+A17
 330
 A02
 100
@@ -1129,7 +1059,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A1B
+A18
 330
 A02
 100
@@ -1140,6 +1070,60 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 AcDbCircle
  10
 160
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A19
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+120
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A1A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A1B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
  20
 174.5
  40
@@ -1159,7 +1143,7 @@ AcDbCircle
  10
 120
  20
-174.5
+25.5
  40
 3
   0
@@ -1177,67 +1161,13 @@ AcDbCircle
  10
 80
  20
-174.5
+25.5
  40
 3
   0
 CIRCLE
   5
 A1E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A1F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A20
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A21
 330
 A02
 100
@@ -1255,7 +1185,7 @@ AcDbCircle
   0
 CIRCLE
   5
-A22
+A1F
 330
 A02
 100
@@ -1273,6 +1203,60 @@ AcDbCircle
   0
 CIRCLE
   5
+A20
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+A21
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+118.322
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+A22
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+117.678
+ 40
+3
+  0
+CIRCLE
+  5
 A23
 330
 A02
@@ -1283,13 +1267,13 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-153.678
+118.322
  20
-82.3223
+117.678
  40
 3
   0
-CIRCLE
+LINE
   5
 A24
 330
@@ -1299,15 +1283,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbCircle
+AcDbLine
  10
-118.322
+3.54e-15
  20
-82.3223
- 40
-3
+184.5
+ 30
+0
+ 11
+2.48688e-14
+ 21
+166.425
+ 31
+0
   0
-CIRCLE
+LINE
   5
 A25
 330
@@ -1317,15 +1307,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbCircle
+AcDbLine
  10
-153.678
+3.10862e-15
  20
-117.678
- 40
-3
+184.5
+ 30
+0
+ 11
+3.10862e-15
+ 21
+184.5
+ 31
+10
   0
-CIRCLE
+LINE
   5
 A26
 330
@@ -1335,15 +1331,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbCircle
+AcDbLine
  10
-118.322
+2.487e-14
  20
-117.678
- 40
-3
+166.425
+ 30
+0
+ 11
+2.487e-14
+ 21
+166.425
+ 31
+10
   0
-ARC
+LINE
   5
 A27
 330
@@ -1353,23 +1355,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbCircle
+AcDbLine
  10
-3
+3.54e-15
  20
-15.5
+184.5
  30
-0
- 40
-3
-100
-AcDbArc
- 50
-180
- 51
--90
+10
+ 11
+2.48688e-14
+ 21
+166.425
+ 31
+10
   0
-LINE
+ARC
   5
 A28
 330
@@ -1379,19 +1379,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
--1.78e-15
+3
  20
-15.5
+184.5
  30
 0
- 11
--1.78e-15
- 21
-15.5
- 31
-10
+ 40
+3
+100
+AcDbArc
+ 50
+90
+ 51
+180
   0
 LINE
   5
@@ -1405,19 +1407,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-3
+3.10862e-15
  20
-12.5
+184.5
  30
 0
  11
-3
+3.10862e-15
  21
-12.5
+184.5
  31
 10
   0
-ARC
+LINE
   5
 A2A
 330
@@ -1427,21 +1429,19 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbCircle
+AcDbLine
  10
 3
  20
-15.5
+187.5
  30
-10
- 40
+0
+ 11
 3
-100
-AcDbArc
- 50
-180
- 51
--90
+ 21
+187.5
+ 31
+10
   0
 ARC
   5
@@ -1457,19 +1457,19 @@ AcDbCircle
  10
 3
  20
-31.1142
+184.5
  30
-0
+10
  40
 3
 100
 AcDbArc
  50
-102.284
+90
  51
 180
   0
-LINE
+ARC
   5
 A2C
 330
@@ -1479,19 +1479,21 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
--6.28e-15
+-12
  20
-31.1142
+100
  30
 0
- 11
--6.28e-15
- 21
-31.1142
- 31
-10
+ 40
+67.5
+100
+AcDbArc
+ 50
+-77.7155
+ 51
+79.7597
   0
 LINE
   5
@@ -1517,9 +1519,229 @@ AcDbLine
  31
 10
   0
-ARC
+LINE
   5
 A2E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+2.487e-14
+ 20
+166.425
+ 30
+0
+ 11
+2.487e-14
+ 21
+166.425
+ 31
+10
+  0
+ARC
+  5
+A2F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+-12
+ 20
+100
+ 30
+10
+ 40
+67.5
+100
+AcDbArc
+ 50
+-77.7155
+ 51
+79.7597
+  0
+LINE
+  5
+A30
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+187.5
+ 30
+0
+ 11
+3
+ 21
+187.5
+ 31
+0
+  0
+LINE
+  5
+A31
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3
+ 20
+187.5
+ 30
+0
+ 11
+3
+ 21
+187.5
+ 31
+10
+  0
+LINE
+  5
+A32
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+187.5
+ 30
+0
+ 11
+197
+ 21
+187.5
+ 31
+10
+  0
+LINE
+  5
+A33
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+187.5
+ 30
+10
+ 11
+3
+ 21
+187.5
+ 31
+10
+  0
+ARC
+  5
+A34
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+3
+ 20
+31.1142
+ 30
+0
+ 40
+3
+100
+AcDbArc
+ 50
+102.284
+ 51
+180
+  0
+LINE
+  5
+A35
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-6.28e-15
+ 20
+31.1142
+ 30
+0
+ 11
+-6.28e-15
+ 21
+31.1142
+ 31
+10
+  0
+LINE
+  5
+A36
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+2.3617
+ 20
+34.0455
+ 30
+0
+ 11
+2.3617
+ 21
+34.0455
+ 31
+10
+  0
+ARC
+  5
+A37
 330
 A02
 100
@@ -1543,9 +1765,181 @@ AcDbArc
  51
 180
   0
+ARC
+  5
+A38
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+197
+ 20
+184.5
+ 30
+0
+ 40
+3
+100
+AcDbArc
+ 50
+0
+ 51
+90
+  0
 LINE
   5
-A2F
+A39
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+184.5
+ 30
+0
+ 11
+200
+ 21
+184.5
+ 31
+10
+  0
+LINE
+  5
+A3A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+187.5
+ 30
+0
+ 11
+197
+ 21
+187.5
+ 31
+10
+  0
+ARC
+  5
+A3B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+197
+ 20
+184.5
+ 30
+10
+ 40
+3
+100
+AcDbArc
+ 50
+0
+ 51
+90
+  0
+LINE
+  5
+A3C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-1.02e-15
+ 20
+15.5
+ 30
+0
+ 11
+-6.32884e-15
+ 21
+31.1142
+ 31
+0
+  0
+LINE
+  5
+A3D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-1.78e-15
+ 20
+15.5
+ 30
+0
+ 11
+-1.78e-15
+ 21
+15.5
+ 31
+10
+  0
+LINE
+  5
+A3E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-6.28e-15
+ 20
+31.1142
+ 30
+0
+ 11
+-6.28e-15
+ 21
+31.1142
+ 31
+10
+  0
+LINE
+  5
+A3F
 330
 A02
 100
@@ -1567,9 +1961,179 @@ AcDbLine
  31
 10
   0
+LINE
+  5
+A40
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+15.5
+ 30
+0
+ 11
+200
+ 21
+184.5
+ 31
+0
+  0
+LINE
+  5
+A41
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+15.5
+ 30
+0
+ 11
+200
+ 21
+15.5
+ 31
+10
+  0
+LINE
+  5
+A42
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+184.5
+ 30
+0
+ 11
+200
+ 21
+184.5
+ 31
+10
+  0
+LINE
+  5
+A43
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+15.5
+ 30
+10
+ 11
+200
+ 21
+184.5
+ 31
+10
+  0
 ARC
   5
-A30
+A44
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+3
+ 20
+15.5
+ 30
+0
+ 40
+3
+100
+AcDbArc
+ 50
+180
+ 51
+-90
+  0
+LINE
+  5
+A45
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+-1.78e-15
+ 20
+15.5
+ 30
+0
+ 11
+-1.78e-15
+ 21
+15.5
+ 31
+10
+  0
+LINE
+  5
+A46
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3
+ 20
+12.5
+ 30
+0
+ 11
+3
+ 21
+12.5
+ 31
+10
+  0
+ARC
+  5
+A47
 330
 A02
 100
@@ -1595,7 +2159,1731 @@ AcDbArc
   0
 ARC
   5
-A31
+A48
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+197
+ 20
+15.5
+ 30
+0
+ 40
+3
+100
+AcDbArc
+ 50
+-90
+ 51
+3.39259e-14
+  0
+LINE
+  5
+A49
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+12.5
+ 30
+0
+ 11
+197
+ 21
+12.5
+ 31
+10
+  0
+LINE
+  5
+A4A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+200
+ 20
+15.5
+ 30
+0
+ 11
+200
+ 21
+15.5
+ 31
+10
+  0
+ARC
+  5
+A4B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+197
+ 20
+15.5
+ 30
+10
+ 40
+3
+100
+AcDbArc
+ 50
+-90
+ 51
+3.39259e-14
+  0
+LINE
+  5
+A4C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3
+ 20
+12.5
+ 30
+0
+ 11
+197
+ 21
+12.5
+ 31
+0
+  0
+LINE
+  5
+A4D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3
+ 20
+12.5
+ 30
+0
+ 11
+3
+ 21
+12.5
+ 31
+10
+  0
+LINE
+  5
+A4E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+12.5
+ 30
+0
+ 11
+197
+ 21
+12.5
+ 31
+10
+  0
+LINE
+  5
+A4F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3
+ 20
+12.5
+ 30
+10
+ 11
+197
+ 21
+12.5
+ 31
+10
+  0
+LINE
+  5
+A50
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+151
+ 20
+100
+ 30
+0
+ 11
+151
+ 21
+100
+ 31
+10
+  0
+LINE
+  5
+A51
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+151
+ 20
+100
+ 30
+0
+ 11
+151
+ 21
+100
+ 31
+10
+  0
+CIRCLE
+  5
+A52
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+136
+ 20
+100
+ 40
+15
+  0
+CIRCLE
+  5
+A53
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+136
+ 20
+100
+ 40
+15
+  0
+LINE
+  5
+A54
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+50.5
+ 30
+0
+ 11
+190
+ 21
+50.5
+ 31
+10
+  0
+LINE
+  5
+A55
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+50.5
+ 30
+0
+ 11
+190
+ 21
+50.5
+ 31
+10
+  0
+CIRCLE
+  5
+A56
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+50.5
+ 40
+3
+  0
+CIRCLE
+  5
+A57
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+50.5
+ 40
+3
+  0
+LINE
+  5
+A58
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+83.5
+ 30
+0
+ 11
+190
+ 21
+83.5
+ 31
+10
+  0
+LINE
+  5
+A59
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+83.5
+ 30
+0
+ 11
+190
+ 21
+83.5
+ 31
+10
+  0
+CIRCLE
+  5
+A5A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+83.5
+ 40
+3
+  0
+CIRCLE
+  5
+A5B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+83.5
+ 40
+3
+  0
+LINE
+  5
+A5C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+116.5
+ 30
+0
+ 11
+190
+ 21
+116.5
+ 31
+10
+  0
+LINE
+  5
+A5D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+116.5
+ 30
+0
+ 11
+190
+ 21
+116.5
+ 31
+10
+  0
+CIRCLE
+  5
+A5E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+116.5
+ 40
+3
+  0
+CIRCLE
+  5
+A5F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+116.5
+ 40
+3
+  0
+LINE
+  5
+A60
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+149.5
+ 30
+0
+ 11
+190
+ 21
+149.5
+ 31
+10
+  0
+LINE
+  5
+A61
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+190
+ 20
+149.5
+ 30
+0
+ 11
+190
+ 21
+149.5
+ 31
+10
+  0
+CIRCLE
+  5
+A62
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+149.5
+ 40
+3
+  0
+CIRCLE
+  5
+A63
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+187
+ 20
+149.5
+ 40
+3
+  0
+LINE
+  5
+A64
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+163
+ 20
+174.5
+ 30
+0
+ 11
+163
+ 21
+174.5
+ 31
+10
+  0
+LINE
+  5
+A65
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+163
+ 20
+174.5
+ 30
+0
+ 11
+163
+ 21
+174.5
+ 31
+10
+  0
+CIRCLE
+  5
+A66
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+160
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A67
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+160
+ 20
+174.5
+ 40
+3
+  0
+LINE
+  5
+A68
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+123
+ 20
+174.5
+ 30
+0
+ 11
+123
+ 21
+174.5
+ 31
+10
+  0
+LINE
+  5
+A69
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+123
+ 20
+174.5
+ 30
+0
+ 11
+123
+ 21
+174.5
+ 31
+10
+  0
+CIRCLE
+  5
+A6A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+120
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A6B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+120
+ 20
+174.5
+ 40
+3
+  0
+LINE
+  5
+A6C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+83
+ 20
+174.5
+ 30
+0
+ 11
+83
+ 21
+174.5
+ 31
+10
+  0
+LINE
+  5
+A6D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+83
+ 20
+174.5
+ 30
+0
+ 11
+83
+ 21
+174.5
+ 31
+10
+  0
+CIRCLE
+  5
+A6E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A6F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+174.5
+ 40
+3
+  0
+LINE
+  5
+A70
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+43
+ 20
+174.5
+ 30
+0
+ 11
+43
+ 21
+174.5
+ 31
+10
+  0
+LINE
+  5
+A71
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+43
+ 20
+174.5
+ 30
+0
+ 11
+43
+ 21
+174.5
+ 31
+10
+  0
+CIRCLE
+  5
+A72
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
+ 20
+174.5
+ 40
+3
+  0
+CIRCLE
+  5
+A73
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
+ 20
+174.5
+ 40
+3
+  0
+LINE
+  5
+A74
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+123
+ 20
+25.5
+ 30
+0
+ 11
+123
+ 21
+25.5
+ 31
+10
+  0
+LINE
+  5
+A75
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+123
+ 20
+25.5
+ 30
+0
+ 11
+123
+ 21
+25.5
+ 31
+10
+  0
+CIRCLE
+  5
+A76
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+120
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+A77
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+120
+ 20
+25.5
+ 40
+3
+  0
+LINE
+  5
+A78
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+83
+ 20
+25.5
+ 30
+0
+ 11
+83
+ 21
+25.5
+ 31
+10
+  0
+LINE
+  5
+A79
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+83
+ 20
+25.5
+ 30
+0
+ 11
+83
+ 21
+25.5
+ 31
+10
+  0
+CIRCLE
+  5
+A7A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+A7B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+25.5
+ 40
+3
+  0
+LINE
+  5
+A7C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+163
+ 20
+25.5
+ 30
+0
+ 11
+163
+ 21
+25.5
+ 31
+10
+  0
+LINE
+  5
+A7D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+163
+ 20
+25.5
+ 30
+0
+ 11
+163
+ 21
+25.5
+ 31
+10
+  0
+CIRCLE
+  5
+A7E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+160
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+A7F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+160
+ 20
+25.5
+ 40
+3
+  0
+LINE
+  5
+A80
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+43
+ 20
+25.5
+ 30
+0
+ 11
+43
+ 21
+25.5
+ 31
+10
+  0
+LINE
+  5
+A81
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+43
+ 20
+25.5
+ 30
+0
+ 11
+43
+ 21
+25.5
+ 31
+10
+  0
+CIRCLE
+  5
+A82
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+A83
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
+ 20
+25.5
+ 40
+3
+  0
+LINE
+  5
+A84
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+156.678
+ 20
+82.3223
+ 30
+0
+ 11
+156.678
+ 21
+82.3223
+ 31
+10
+  0
+LINE
+  5
+A85
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+156.678
+ 20
+82.3223
+ 30
+0
+ 11
+156.678
+ 21
+82.3223
+ 31
+10
+  0
+CIRCLE
+  5
+A86
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+A87
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+82.3223
+ 40
+3
+  0
+LINE
+  5
+A88
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+121.322
+ 20
+82.3223
+ 30
+0
+ 11
+121.322
+ 21
+82.3223
+ 31
+10
+  0
+LINE
+  5
+A89
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+121.322
+ 20
+82.3223
+ 30
+0
+ 11
+121.322
+ 21
+82.3223
+ 31
+10
+  0
+CIRCLE
+  5
+A8A
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+118.322
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+A8B
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+118.322
+ 20
+82.3223
+ 40
+3
+  0
+LINE
+  5
+A8C
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+156.678
+ 20
+117.678
+ 30
+0
+ 11
+156.678
+ 21
+117.678
+ 31
+10
+  0
+LINE
+  5
+A8D
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+156.678
+ 20
+117.678
+ 30
+0
+ 11
+156.678
+ 21
+117.678
+ 31
+10
+  0
+CIRCLE
+  5
+A8E
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+117.678
+ 40
+3
+  0
+CIRCLE
+  5
+A8F
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+117.678
+ 40
+3
+  0
+LINE
+  5
+A90
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+121.322
+ 20
+117.678
+ 30
+0
+ 11
+121.322
+ 21
+117.678
+ 31
+10
+  0
+LINE
+  5
+A91
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+121.322
+ 20
+117.678
+ 30
+0
+ 11
+121.322
+ 21
+117.678
+ 31
+10
+  0
+CIRCLE
+  5
+A92
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+118.322
+ 20
+117.678
+ 40
+3
+  0
+CIRCLE
+  5
+A93
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+118.322
+ 20
+117.678
+ 40
+3
+  0
+LINE
+  5
+A94
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+3.54e-15
+ 20
+184.5
+ 30
+10
+ 11
+2.48688e-14
+ 21
+166.425
+ 31
+10
+  0
+ARC
+  5
+A95
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+3
+ 20
+184.5
+ 30
+10
+ 40
+3
+100
+AcDbArc
+ 50
+90
+ 51
+180
+  0
+ARC
+  5
+A96
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+-12
+ 20
+100
+ 30
+10
+ 40
+67.5
+100
+AcDbArc
+ 50
+-77.7155
+ 51
+79.7597
+  0
+LINE
+  5
+A97
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbLine
+ 10
+197
+ 20
+187.5
+ 30
+10
+ 11
+3
+ 21
+187.5
+ 31
+10
+  0
+ARC
+  5
+A98
 330
 A02
 100
@@ -1619,2245 +3907,7 @@ AcDbArc
  51
 180
   0
-LINE
-  5
-A32
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-3
- 20
-12.5
- 30
-10
- 11
-197
- 21
-12.5
- 31
-10
-  0
 ARC
-  5
-A33
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
--12
- 20
-100
- 30
-10
- 40
-67.5
-100
-AcDbArc
- 50
--77.7155
- 51
-79.7597
-  0
-ARC
-  5
-A34
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-15.5
- 30
-10
- 40
-3
-100
-AcDbArc
- 50
--90
- 51
-3.39259e-14
-  0
-LINE
-  5
-A35
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-0
- 20
-187.5
- 30
-10
- 11
-2.48688e-14
- 21
-166.425
- 31
-10
-  0
-LINE
-  5
-A36
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-10
- 11
-200
- 21
-184.5
- 31
-10
-  0
-LINE
-  5
-A37
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-10
- 11
-0
- 21
-187.5
- 31
-10
-  0
-ARC
-  5
-A38
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-184.5
- 30
-10
- 40
-3
-100
-AcDbArc
- 50
-0
- 51
-90
-  0
-CIRCLE
-  5
-A39
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-136
- 20
-100
- 40
-15
-  0
-CIRCLE
-  5
-A3A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-50.5
- 40
-3
-  0
-CIRCLE
-  5
-A3B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-83.5
- 40
-3
-  0
-CIRCLE
-  5
-A3C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-116.5
- 40
-3
-  0
-CIRCLE
-  5
-A3D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-149.5
- 40
-3
-  0
-CIRCLE
-  5
-A3E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A3F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A40
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A41
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A42
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A43
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A44
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A45
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A46
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-153.678
- 20
-82.3223
- 40
-3
-  0
-CIRCLE
-  5
-A47
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-118.322
- 20
-82.3223
- 40
-3
-  0
-CIRCLE
-  5
-A48
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-153.678
- 20
-117.678
- 40
-3
-  0
-CIRCLE
-  5
-A49
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-118.322
- 20
-117.678
- 40
-3
-  0
-LINE
-  5
-A4A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-3
- 20
-12.5
- 30
-0
- 11
-197
- 21
-12.5
- 31
-0
-  0
-LINE
-  5
-A4B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-3
- 20
-12.5
- 30
-0
- 11
-3
- 21
-12.5
- 31
-10
-  0
-LINE
-  5
-A4C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-12.5
- 30
-0
- 11
-197
- 21
-12.5
- 31
-10
-  0
-LINE
-  5
-A4D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-3
- 20
-12.5
- 30
-10
- 11
-197
- 21
-12.5
- 31
-10
-  0
-ARC
-  5
-A4E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
--12
- 20
-100
- 30
-0
- 40
-67.5
-100
-AcDbArc
- 50
--77.7155
- 51
-79.7597
-  0
-LINE
-  5
-A4F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-2.3617
- 20
-34.0455
- 30
-0
- 11
-2.3617
- 21
-34.0455
- 31
-10
-  0
-LINE
-  5
-A50
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-2.487e-14
- 20
-166.425
- 30
-0
- 11
-2.487e-14
- 21
-166.425
- 31
-10
-  0
-ARC
-  5
-A51
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
--12
- 20
-100
- 30
-10
- 40
-67.5
-100
-AcDbArc
- 50
--77.7155
- 51
-79.7597
-  0
-ARC
-  5
-A52
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-15.5
- 30
-0
- 40
-3
-100
-AcDbArc
- 50
--90
- 51
-3.39259e-14
-  0
-LINE
-  5
-A53
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-12.5
- 30
-0
- 11
-197
- 21
-12.5
- 31
-10
-  0
-LINE
-  5
-A54
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-0
- 11
-200
- 21
-15.5
- 31
-10
-  0
-ARC
-  5
-A55
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-15.5
- 30
-10
- 40
-3
-100
-AcDbArc
- 50
--90
- 51
-3.39259e-14
-  0
-LINE
-  5
-A56
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-0
- 20
-187.5
- 30
-0
- 11
-0
- 21
-187.5
- 31
-10
-  0
-LINE
-  5
-A57
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-2.487e-14
- 20
-166.425
- 30
-0
- 11
-2.487e-14
- 21
-166.425
- 31
-10
-  0
-LINE
-  5
-A58
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-0
- 20
-187.5
- 30
-0
- 11
-2.48688e-14
- 21
-166.425
- 31
-0
-  0
-LINE
-  5
-A59
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-0
- 20
-187.5
- 30
-10
- 11
-2.48688e-14
- 21
-166.425
- 31
-10
-  0
-LINE
-  5
-A5A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-0
- 11
-200
- 21
-184.5
- 31
-0
-  0
-LINE
-  5
-A5B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-0
- 11
-200
- 21
-15.5
- 31
-10
-  0
-LINE
-  5
-A5C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-184.5
- 30
-0
- 11
-200
- 21
-184.5
- 31
-10
-  0
-LINE
-  5
-A5D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-15.5
- 30
-10
- 11
-200
- 21
-184.5
- 31
-10
-  0
-LINE
-  5
-A5E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-0
- 11
-0
- 21
-187.5
- 31
-0
-  0
-LINE
-  5
-A5F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-0
- 11
-197
- 21
-187.5
- 31
-10
-  0
-LINE
-  5
-A60
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-0
- 20
-187.5
- 30
-0
- 11
-0
- 21
-187.5
- 31
-10
-  0
-LINE
-  5
-A61
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-10
- 11
-0
- 21
-187.5
- 31
-10
-  0
-ARC
-  5
-A62
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-184.5
- 30
-0
- 40
-3
-100
-AcDbArc
- 50
-0
- 51
-90
-  0
-LINE
-  5
-A63
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-200
- 20
-184.5
- 30
-0
- 11
-200
- 21
-184.5
- 31
-10
-  0
-LINE
-  5
-A64
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-197
- 20
-187.5
- 30
-0
- 11
-197
- 21
-187.5
- 31
-10
-  0
-ARC
-  5
-A65
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-197
- 20
-184.5
- 30
-10
- 40
-3
-100
-AcDbArc
- 50
-0
- 51
-90
-  0
-LINE
-  5
-A66
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-151
- 20
-100
- 30
-0
- 11
-151
- 21
-100
- 31
-10
-  0
-LINE
-  5
-A67
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-151
- 20
-100
- 30
-0
- 11
-151
- 21
-100
- 31
-10
-  0
-CIRCLE
-  5
-A68
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-136
- 20
-100
- 40
-15
-  0
-CIRCLE
-  5
-A69
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-136
- 20
-100
- 40
-15
-  0
-LINE
-  5
-A6A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-50.5
- 30
-0
- 11
-190
- 21
-50.5
- 31
-10
-  0
-LINE
-  5
-A6B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-50.5
- 30
-0
- 11
-190
- 21
-50.5
- 31
-10
-  0
-CIRCLE
-  5
-A6C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-50.5
- 40
-3
-  0
-CIRCLE
-  5
-A6D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-50.5
- 40
-3
-  0
-LINE
-  5
-A6E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-83.5
- 30
-0
- 11
-190
- 21
-83.5
- 31
-10
-  0
-LINE
-  5
-A6F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-83.5
- 30
-0
- 11
-190
- 21
-83.5
- 31
-10
-  0
-CIRCLE
-  5
-A70
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-83.5
- 40
-3
-  0
-CIRCLE
-  5
-A71
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-83.5
- 40
-3
-  0
-LINE
-  5
-A72
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-116.5
- 30
-0
- 11
-190
- 21
-116.5
- 31
-10
-  0
-LINE
-  5
-A73
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-116.5
- 30
-0
- 11
-190
- 21
-116.5
- 31
-10
-  0
-CIRCLE
-  5
-A74
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-116.5
- 40
-3
-  0
-CIRCLE
-  5
-A75
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-116.5
- 40
-3
-  0
-LINE
-  5
-A76
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-149.5
- 30
-0
- 11
-190
- 21
-149.5
- 31
-10
-  0
-LINE
-  5
-A77
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-190
- 20
-149.5
- 30
-0
- 11
-190
- 21
-149.5
- 31
-10
-  0
-CIRCLE
-  5
-A78
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-149.5
- 40
-3
-  0
-CIRCLE
-  5
-A79
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-187
- 20
-149.5
- 40
-3
-  0
-LINE
-  5
-A7A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-163
- 20
-174.5
- 30
-0
- 11
-163
- 21
-174.5
- 31
-10
-  0
-LINE
-  5
-A7B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-163
- 20
-174.5
- 30
-0
- 11
-163
- 21
-174.5
- 31
-10
-  0
-CIRCLE
-  5
-A7C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A7D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-174.5
- 40
-3
-  0
-LINE
-  5
-A7E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-123
- 20
-174.5
- 30
-0
- 11
-123
- 21
-174.5
- 31
-10
-  0
-LINE
-  5
-A7F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-123
- 20
-174.5
- 30
-0
- 11
-123
- 21
-174.5
- 31
-10
-  0
-CIRCLE
-  5
-A80
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A81
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-174.5
- 40
-3
-  0
-LINE
-  5
-A82
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-83
- 20
-174.5
- 30
-0
- 11
-83
- 21
-174.5
- 31
-10
-  0
-LINE
-  5
-A83
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-83
- 20
-174.5
- 30
-0
- 11
-83
- 21
-174.5
- 31
-10
-  0
-CIRCLE
-  5
-A84
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A85
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-174.5
- 40
-3
-  0
-LINE
-  5
-A86
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-43
- 20
-174.5
- 30
-0
- 11
-43
- 21
-174.5
- 31
-10
-  0
-LINE
-  5
-A87
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-43
- 20
-174.5
- 30
-0
- 11
-43
- 21
-174.5
- 31
-10
-  0
-CIRCLE
-  5
-A88
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-174.5
- 40
-3
-  0
-CIRCLE
-  5
-A89
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-174.5
- 40
-3
-  0
-LINE
-  5
-A8A
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-123
- 20
-25.5
- 30
-0
- 11
-123
- 21
-25.5
- 31
-10
-  0
-LINE
-  5
-A8B
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-123
- 20
-25.5
- 30
-0
- 11
-123
- 21
-25.5
- 31
-10
-  0
-CIRCLE
-  5
-A8C
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A8D
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-120
- 20
-25.5
- 40
-3
-  0
-LINE
-  5
-A8E
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-83
- 20
-25.5
- 30
-0
- 11
-83
- 21
-25.5
- 31
-10
-  0
-LINE
-  5
-A8F
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-83
- 20
-25.5
- 30
-0
- 11
-83
- 21
-25.5
- 31
-10
-  0
-CIRCLE
-  5
-A90
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A91
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-80
- 20
-25.5
- 40
-3
-  0
-LINE
-  5
-A92
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-163
- 20
-25.5
- 30
-0
- 11
-163
- 21
-25.5
- 31
-10
-  0
-LINE
-  5
-A93
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-163
- 20
-25.5
- 30
-0
- 11
-163
- 21
-25.5
- 31
-10
-  0
-CIRCLE
-  5
-A94
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-25.5
- 40
-3
-  0
-CIRCLE
-  5
-A95
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-160
- 20
-25.5
- 40
-3
-  0
-LINE
-  5
-A96
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-43
- 20
-25.5
- 30
-0
- 11
-43
- 21
-25.5
- 31
-10
-  0
-LINE
-  5
-A97
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbLine
- 10
-43
- 20
-25.5
- 30
-0
- 11
-43
- 21
-25.5
- 31
-10
-  0
-CIRCLE
-  5
-A98
-330
-A02
-100
-AcDbEntity
-  8
-b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
-100
-AcDbCircle
- 10
-40
- 20
-25.5
- 40
-3
-  0
-CIRCLE
   5
 A99
 330
@@ -3869,11 +3919,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-40
+197
  20
-25.5
+184.5
+ 30
+10
  40
 3
+100
+AcDbArc
+ 50
+0
+ 51
+90
   0
 LINE
   5
@@ -3887,15 +3945,15 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-156.678
+-1.02e-15
  20
-82.3223
+15.5
  30
-0
+10
  11
-156.678
+-6.32884e-15
  21
-82.3223
+31.1142
  31
 10
   0
@@ -3911,19 +3969,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-156.678
+200
  20
-82.3223
+15.5
  30
-0
+10
  11
-156.678
+200
  21
-82.3223
+184.5
  31
 10
   0
-CIRCLE
+ARC
   5
 A9C
 330
@@ -3935,13 +3993,21 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-153.678
+3
  20
-82.3223
+15.5
+ 30
+10
  40
 3
+100
+AcDbArc
+ 50
+180
+ 51
+-90
   0
-CIRCLE
+ARC
   5
 A9D
 330
@@ -3953,11 +4019,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-153.678
+197
  20
-82.3223
+15.5
+ 30
+10
  40
 3
+100
+AcDbArc
+ 50
+-90
+ 51
+3.39259e-14
   0
 LINE
   5
@@ -3971,19 +4045,19 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbLine
  10
-121.322
+3
  20
-82.3223
+12.5
  30
-0
+10
  11
-121.322
+197
  21
-82.3223
+12.5
  31
 10
   0
-LINE
+CIRCLE
   5
 A9F
 330
@@ -3993,19 +4067,13 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
-121.322
+136
  20
-82.3223
- 30
-0
- 11
-121.322
- 21
-82.3223
- 31
-10
+100
+ 40
+15
   0
 CIRCLE
   5
@@ -4019,9 +4087,9 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-118.322
+187
  20
-82.3223
+50.5
  40
 3
   0
@@ -4037,13 +4105,13 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-118.322
+187
  20
-82.3223
+83.5
  40
 3
   0
-LINE
+CIRCLE
   5
 AA2
 330
@@ -4053,21 +4121,15 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
-156.678
+187
  20
-117.678
- 30
-0
- 11
-156.678
- 21
-117.678
- 31
-10
+116.5
+ 40
+3
   0
-LINE
+CIRCLE
   5
 AA3
 330
@@ -4077,19 +4139,13 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
-156.678
+187
  20
-117.678
- 30
-0
- 11
-156.678
- 21
-117.678
- 31
-10
+149.5
+ 40
+3
   0
 CIRCLE
   5
@@ -4103,9 +4159,9 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-153.678
+160
  20
-117.678
+174.5
  40
 3
   0
@@ -4121,13 +4177,13 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
-153.678
+120
  20
-117.678
+174.5
  40
 3
   0
-LINE
+CIRCLE
   5
 AA6
 330
@@ -4137,21 +4193,15 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
-121.322
+80
  20
-117.678
- 30
-0
- 11
-121.322
- 21
-117.678
- 31
-10
+174.5
+ 40
+3
   0
-LINE
+CIRCLE
   5
 AA7
 330
@@ -4161,19 +4211,13 @@ AcDbEntity
   8
 b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
-AcDbLine
+AcDbCircle
  10
-121.322
+40
  20
-117.678
- 30
-0
- 11
-121.322
- 21
-117.678
- 31
-10
+174.5
+ 40
+3
   0
 CIRCLE
   5
@@ -4187,7 +4231,115 @@ b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
 100
 AcDbCircle
  10
+120
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+AA9
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+80
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+AAA
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+160
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+AAB
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+40
+ 20
+25.5
+ 40
+3
+  0
+CIRCLE
+  5
+AAC
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+AAD
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
 118.322
+ 20
+82.3223
+ 40
+3
+  0
+CIRCLE
+  5
+AAE
+330
+A02
+100
+AcDbEntity
+  8
+b_bldc_holder_p3_175x200x10_otv_d30_d6_hole_for_bldc_001_
+100
+AcDbCircle
+ 10
+153.678
  20
 117.678
  40
@@ -4195,7 +4347,7 @@ AcDbCircle
   0
 CIRCLE
   5
-AA9
+AAF
 330
 A02
 100
