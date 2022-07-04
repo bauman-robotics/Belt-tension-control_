@@ -60,8 +60,10 @@ const int8_t DIR_DECODE[2] = {-1, 1};
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim6;
 extern DMA_HandleTypeDef hdma_uart4_tx;
+extern UART_HandleTypeDef huart4;
 /* USER CODE BEGIN EV */
 extern uint8_t uart_send;
+extern uint8_t flag_steps_present;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -222,19 +224,47 @@ void DMA1_Stream4_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-	step_count += DIR_DECODE[READ_BIT(DIR_GPIO_Port->IDR, DIR_Pin)>>9];
-	if(step_count >= 0) step_count %= STEP_PER_REV;
-	else
-	{
-		step_count *= -1;
-		step_count %= STEP_PER_REV;
-		step_count *= -1;
+	if(EXTI->PR & 1<<10)
+  {
+    EXTI->PR =  1<<10; //
+    if (HAL_GPIO_ReadPin(GPIOA, STEP_Pin)) {
+			HAL_GPIO_TogglePin(GPIOD, Blue_led_Pin); // Blue_led 
+			static uint32_t steps_count;
+			if (steps_count < 10) {
+				steps_count ++;
+			} else {
+				flag_steps_present = 1; 
+			}
+			
+			step_count += DIR_DECODE[READ_BIT(DIR_GPIO_Port->IDR, DIR_Pin)>>9];
+			if(step_count >= 0) step_count %= STEP_PER_REV;
+			else
+			{
+				step_count *= -1;
+				step_count %= STEP_PER_REV;
+				step_count *= -1;
+			}
+		}
 	}
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(STEP_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
+  * @brief This function handles UART4 global interrupt.
+  */
+void UART4_IRQHandler(void)
+{
+  /* USER CODE BEGIN UART4_IRQn 0 */
+	HAL_GPIO_TogglePin(GPIOD, Led_green_Pin);  // Led  Green
+  /* USER CODE END UART4_IRQn 0 */
+  HAL_UART_IRQHandler(&huart4);
+  /* USER CODE BEGIN UART4_IRQn 1 */
+
+  /* USER CODE END UART4_IRQn 1 */
 }
 
 /**

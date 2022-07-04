@@ -57,7 +57,10 @@ double angle_f = 0.0f;
 extern int32_t step_count;
 uint8_t COBS_Buf[5] = {0};
 uint8_t UART_TxBuf[15] = {0};
+uint8_t UART_RxBuf[15] = {0};
 float_u pack;
+uint8_t flag_steps_present = 0;
+float start_pozition = 0.0f;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -110,13 +113,50 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	HAL_TIM_Base_Start_IT(&htim6);
 	size_t send_num;
+	
+
+	//HAL_Delay(2000);
+	uint8_t cont = 1;
+	char ch = 0xFF;
+	float_u start_pos;
+	float start_position_f = 0.0f;
+	uint32_t zero_count = 0;
+	while(cont)
+	{
+			HAL_UART_Receive(&huart4, &ch, 1, 100);
+			if(ch == 0) zero_count ++;
+			if (zero_count > 200)
+			{
+					HAL_UART_Receive(&huart4, &UART_RxBuf, 6, 100);
+					uint8_t temp[10];
+					cobs_decode(UART_RxBuf, 6, temp);
+				
+				  //memcpy(&start_pozition, temp, sizeof(float));
+					memcpy(&start_pozition, temp, 4);
+					//start_pos.var_ar[0] = temp[0];
+					//start_pos.var_ar[1] = temp[1];
+					//start_pos.var_ar[2] = temp[2];
+					//start_pos.var_ar[3] = temp[3];
+					//start_position_f = start_pos.var;
+				//if ((start_pozition >= -180) && (start_pozition <=180))
+					cont = 0;
+			}
+	}
+	
+	
   while (1)
-  {
-		if(uart_send == 1)
+  { 
+		if (HAL_GPIO_ReadPin(GPIOC, Pwr_on_Pin)) HAL_GPIO_WritePin(GPIOD, Red_led_Pin,1);
+		else HAL_GPIO_WritePin(GPIOD, Red_led_Pin,0);
+
+		//if ((uart_send == 1) && (HAL_GPIO_ReadPin(GPIOC, Pwr_on_Pin)))
+		if (uart_send == 1)
 		{
+			HAL_GPIO_TogglePin(GPIOD, Orange_led_Pin);  // Orange_led 
 			uart_send = 0;
 			angle_f = (360.0f*step_count)/STEP_PER_REV;
 			pack.var = angle_f;
+			pack.var = start_pozition - angle_f ;
 			COBS_Buf[0] = 'p';
 			COBS_Buf[1] = pack.var_ar[0];
 			COBS_Buf[2] = pack.var_ar[1];
@@ -124,7 +164,7 @@ int main(void)
 			COBS_Buf[4] = pack.var_ar[3];
 			send_num = cobs_encode(COBS_Buf, 5, UART_TxBuf);
 			UART_TxBuf[send_num] = 0;
-			HAL_UART_Transmit(&huart4, UART_TxBuf, send_num + 1, 100);
+			HAL_UART_Transmit(&huart4, UART_TxBuf, send_num + 1, 100);			
 		}
 		
 		
